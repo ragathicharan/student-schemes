@@ -248,6 +248,58 @@
             .container {
                 padding: 10px;
             }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+        
+        .nav-btn:active {
+            transform: translateY(0px);
         }
     </style>
 </head>
@@ -268,14 +320,25 @@
             </div>
         </div>
 
+        <!-- Navigation Buttons -->
+        <div class="nav-container">
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="scrollToSection('central-govt')">🏛 Central Government Schemes</button>
+                <button class="nav-btn" onclick="scrollToSection('ap-govt')">🏛 Andhra Pradesh State Government Schemes</button>
+                <button class="nav-btn" onclick="scrollToSection('foundations')">🏛 Foundation and Trusts</button>
+                <button class="nav-btn" onclick="scrollToSection('csr-scholarships')">🏢 CSR-Based Private Sector Scholarships</button>
+                <button class="nav-btn" onclick="scrollToSection('loan-eligibility')">🏦 Private Sector Education Loan Eligibility Criteria</button>
+            </div>
+        </div>
+
         <!-- Central Government Section -->
-        <div class="section">
+        <div class="section" id="central-govt">
             <h2>🏛 Central Government Schemes</h2>
             <div class="scheme-grid">
                 <div class="scheme-card">
                     <h3>PM-YASASVI Scheme</h3>
                     <p>Scholarships for OBC, EBC, and DNT students studying in classes 9-12. Provides financial assistance for quality education.</p>
-                    <a href="https://yet.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                    <a href="https://www.myscheme.gov.in/schemes/pm-yasasvitcceobcebcdnts" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
                 </div>
                 
                 <div class="scheme-card">
@@ -317,7 +380,7 @@
         </div>
 
         <!-- Andhra Pradesh State Government Section -->
-        <div class="section">
+        <div class="section" id="ap-govt">
             <div class="state-header">
                 <h2>🏛 Andhra Pradesh State Government Schemes</h2>
             </div>
@@ -361,7 +424,7 @@
         </div>
 
         <!-- Foundation and Trusts Section -->
-        <div class="section">
+        <div class="section" id="foundations">
             <h2>🏛 Foundation and Trusts</h2>
             <div class="scheme-grid">
                 <div class="scheme-card">
@@ -395,7 +458,7 @@
         </div>
 
         <!-- Private Sector CSR Scholarships Section -->
-        <div class="section">
+        <div class="section" id="csr-scholarships">
             <h2>🏢 CSR-Based Private Sector Scholarships</h2>
             <div class="scheme-grid">
                 <div class="scheme-card">
@@ -449,7 +512,7 @@
                 <div class="scheme-card">
                     <h3>State Bank of India (SBI) Student Loan</h3>
                     <p>SBI Student Loan Scheme with competitive interest rates and flexible repayment options for higher education financing.</p>
-                    <a href="https://www.sbi.co.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit SBI</a>
+                    <a href="https://sbi.bank.in/web/personal-banking/loans/education-loans/student-loan-scheme" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit SBI</a>
                 </div>
                 
                 <div class="scheme-card">
@@ -467,13 +530,13 @@
                 <div class="scheme-card">
                     <h3>Canara Bank Vidya Loan</h3>
                     <p>Specialized education loan scheme covering domestic and international education expenses with flexible terms.</p>
-                    <a href="https://www.canarabank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Canara</a>
+                    <a href="https://canarabank.bank.in/vidya-turant" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Canara</a>
                 </div>
             </div>
         </div>
 
         <!-- Education Loan Eligibility Information -->
-        <div class="section bank-section">
+        <div class="section bank-section" id="loan-eligibility">
             <h2>🏦 Private Sector Education Loan Eligibility Criteria</h2>
             
             <div class="eligibility-list">
@@ -504,5 +567,17 @@
             <p>For comprehensive information, visit <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">MyScheme.gov.in</a></p>
         </div>
     </div>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eddaaaf51a8ef1',t:'MTc2MDUxNTk3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ee199c142548e0',t:'MTc2MDUxODU1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

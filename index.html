@@ -26,24 +26,74 @@
         
         .header {
             text-align: center;
-            background: white;
-            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .education-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .floating-icon:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 2s; }
+        .floating-icon:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 3s; }
+        .floating-icon:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+        .floating-icon:nth-child(6) { top: 40%; right: 5%; animation-delay: 5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
         
         .header h1 {
-            color: #2c3e50;
+            color: white;
             font-size: 2.5rem;
             margin-bottom: 10px;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .header p {
-            color: #7f8c8d;
+            color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .reference-link {
@@ -204,11 +254,18 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 Government Education Schemes & Bank Loans</h1>
-            <p>Comprehensive guide to education funding opportunities in India</p>
-            <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" class="reference-link">
-                Visit MyScheme.gov.in for More Details
-            </a>
+            <div class="education-icons">
+                <div class="floating-icon">📚</div>
+                <div class="floating-icon">🎓</div>
+                <div class="floating-icon">📝</div>
+                <div class="floating-icon">💡</div>
+                <div class="floating-icon">🏫</div>
+                <div class="floating-icon">📖</div>
+            </div>
+            <div class="header-content">
+                <h1>🎓 Government Education Schemes & Bank Loans</h1>
+                <p>Comprehensive guide to education funding opportunities in India</p>
+            </div>
         </div>
 
         <!-- Central Government Section -->
@@ -218,7 +275,7 @@
                 <div class="scheme-card">
                     <h3>PM-YASASVI Scheme</h3>
                     <p>Scholarships for OBC, EBC, and DNT students studying in classes 9-12. Provides financial assistance for quality education.</p>
-                    <a href="https://www.myscheme.gov.in/schemes/pm-yasasvitcceobcebcdnts" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                    <a href="https://yet.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
                 </div>
                 
                 <div class="scheme-card">
@@ -303,9 +360,121 @@
             </div>
         </div>
 
-        <!-- Bank Education Loans Section -->
+        <!-- Foundation and Trusts Section -->
+        <div class="section">
+            <h2>🏛 Foundation and Trusts</h2>
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <h3>J. N. Tata Endowment Loan Scholarship</h3>
+                    <p>Prestigious loan scholarship for higher education abroad. Application window was from 7 January to 23 March 2025. Monitor their site for the next cycle.</p>
+                    <a href="https://jntataendowment.org" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Official Site</a>
+                    <br><br>
+                    <a href="https://application.jntataendowment.org/TataEndowment/" target="_blank" rel="noopener noreferrer" class="scheme-link">Application Portal</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Vidyadhan Scholarship Program</h3>
+                    <p>Educational scholarship program for deserving students. Currently no active application form available. Check back for future application cycles.</p>
+                    <a href="https://www.buddy4study.com/page/vidyadhan-scholarship" target="_blank" rel="noopener noreferrer" class="scheme-link">Learn More</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Santoor Scholarship Program</h3>
+                    <p>Scholarship initiative for women's education and empowerment. Currently no verified open application available. Monitor for future announcements.</p>
+                    <a href="https://www.buddy4study.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Check Updates</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Hakeem Abdul Hameed Scholarship (Hamdard)</h3>
+                    <p>Scholarship by Hamdard Foundation for educational support. Application for 2024-25 is currently closed. Check foundation website for next cycle.</p>
+                    <a href="https://www.hamdardfoundation.in/news/download-scholarship-application-for-2024-25" target="_blank" rel="noopener noreferrer" class="scheme-link">Foundation Site</a>
+                    <br><br>
+                    <a href="https://hamdardeducationsociety.org.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Education Society</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Private Sector CSR Scholarships Section -->
+        <div class="section">
+            <h2>🏢 CSR-Based Private Sector Scholarships</h2>
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <h3>HDFC Bank Parivartan ECSS Programme</h3>
+                    <p>Merit-cum-need-based program for students from Class 1 to postgraduate levels facing financial hardship. Offers up to ₹75,000 for professional postgraduate courses.</p>
+                    <a href="https://www.parivartanecss.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Kotak Kanya Scholarship</h3>
+                    <p>For meritorious female students from low-income families (annual income below ₹6 lakhs) pursuing professional graduation courses from top-tier institutes.</p>
+                    <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Kotak Suraksha Scholarship</h3>
+                    <p>Provides up to ₹1,00,000 per year to students with disabilities pursuing general or professional graduation courses from Kotak Securities.</p>
+                    <a href="https://www.buddy4study.com/page/kotak-suraksha-scholarship-program?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Reliance Foundation Scholarship</h3>
+                    <p>Supports meritorious undergraduate and postgraduate students with up to ₹2 lakhs and ₹6 lakhs annually. Includes mentorship and networking opportunities.</p>
+                    <a href="https://reliancefoundation.org/reliance-foundation-scholarships-2025-26?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>LIC Golden Jubilee Scholarship Scheme</h3>
+                    <p>For students from economically weaker sections pursuing higher studies in India. Available for both government and private colleges/universities.</p>
+                    <a href="https://licindia.in/golden-jubilee-scholarship-scheme" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Colgate Keep India Smiling Scholarship</h3>
+                    <p>Offers financial aid and mentorship to deserving and meritorious individuals pursuing higher education with comprehensive support.</p>
+                    <a href="https://www.buddy4study.com/page/keep-india-smiling-foundational-scholarship-programme?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Indian Oil Educational Scholarship Scheme</h3>
+                    <p>Assists meritorious and financially disadvantaged students pursuing courses like 10+2, ITI, engineering, MBBS, and MBA.</p>
+                    <a href="https://www.iocl.com/PeopleCare/Scholarships.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Bharti Airtel Foundation Scholarship</h3>
+                    <p>Quality and free education initiative for underprivileged children, providing comprehensive educational support and opportunities.</p>
+                    <a href="https://bhartifoundation.org/bharti-airtel-scholarship/" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>State Bank of India (SBI) Student Loan</h3>
+                    <p>SBI Student Loan Scheme with competitive interest rates and flexible repayment options for higher education financing.</p>
+                    <a href="https://www.sbi.co.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit SBI</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>HDFC Bank Education Loan</h3>
+                    <p>Comprehensive education loan covering tuition fees, living expenses, and other educational costs with quick processing.</p>
+                    <a href="https://www.hdfcbank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply HDFC</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>ICICI Bank Education Loan</h3>
+                    <p>Quick processing education loans with minimal documentation and attractive interest rates for students.</p>
+                    <a href="https://www.icicibank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Check ICICI</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Canara Bank Vidya Loan</h3>
+                    <p>Specialized education loan scheme covering domestic and international education expenses with flexible terms.</p>
+                    <a href="https://www.canarabank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Canara</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Loan Eligibility Information -->
         <div class="section bank-section">
-            <h2>🏦 Bank Education Loan Eligibility Criteria</h2>
+            <h2>🏦 Private Sector Education Loan Eligibility Criteria</h2>
             
             <div class="eligibility-list">
                 <h4>General Eligibility Requirements:</h4>
@@ -328,32 +497,6 @@
                     <li>Repayment period: 5-15 years after course completion</li>
                 </ul>
             </div>
-            
-            <div class="scheme-grid">
-                <div class="scheme-card">
-                    <h3>State Bank of India (SBI)</h3>
-                    <p>SBI Student Loan Scheme with competitive interest rates and flexible repayment options.</p>
-                    <a href="https://www.sbiashascholarship.co.in/" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit SBI</a>
-                </div>
-                
-                <div class="scheme-card">
-                    <h3>HDFC Bank Education Loan</h3>
-                    <p>Comprehensive education loan covering tuition fees, living expenses, and other educational costs.</p>
-                    <a href="https://www.hdfcbank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply HDFC</a>
-                </div>
-                
-                <div class="scheme-card">
-                    <h3>ICICI Bank Education Loan</h3>
-                    <p>Quick processing education loans with minimal documentation and attractive interest rates.</p>
-                    <a href="https://www.icicibank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Check ICICI</a>
-                </div>
-                
-                <div class="scheme-card">
-                    <h3>Canara Bank Vidya Loan</h3>
-                    <p>Specialized education loan scheme covering domestic and international education expenses.</p>
-                    <a href="https://scholarship.canarabank.in/scholar/login.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Canara</a>
-                </div>
-            </div>
         </div>
 
         <div class="footer">
@@ -361,5 +504,5 @@
             <p>For comprehensive information, visit <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">MyScheme.gov.in</a></p>
         </div>
     </div>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ed10cd711bb550',t:'MTc2MDUwNzcwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eddaaaf51a8ef1',t:'MTc2MDUxNTk3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Education Schemes & Bank Loans</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100%;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .reference-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .reference-link:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .scheme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .scheme-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .scheme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .scheme-card h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .scheme-card p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .scheme-link {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .scheme-link:hover {
+            background: #219a52;
+        }
+        
+        .bank-section {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #2c3e50;
+        }
+        
+        .bank-section h2 {
+            border-bottom-color: #e74c3c;
+        }
+        
+        .eligibility-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .eligibility-list h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .eligibility-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .eligibility-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .eligibility-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .state-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .scheme-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Government Education Schemes & Bank Loans</h1>
+            <p>Comprehensive guide to education funding opportunities in India</p>
+            <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" class="reference-link">
+                Visit MyScheme.gov.in for More Details
+            </a>
+        </div>
+
+        <!-- Central Government Section -->
+        <div class="section">
+            <h2>🏛 Central Government Schemes</h2>
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <h3>PM-YASASVI Scheme</h3>
+                    <p>Scholarships for OBC, EBC, and DNT students studying in classes 9-12. Provides financial assistance for quality education.</p>
+                    <a href="https://www.myscheme.gov.in/schemes/pm-yasasvitcceobcebcdnts" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>National Scholarship Portal (NSP)</h3>
+                    <p>One-stop platform for various scholarships including Pre-Matric, Post-Matric, and Merit-cum-Means scholarships.</p>
+                    <a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Portal</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Pradhan Mantri Vidya Lakshmi Karyakram</h3>
+                    <p>Educational loan scheme providing easy access to education loans with government support and interest subsidies.</p>
+                    <a href="https://www.india.gov.in/spotlight/pradhan-mantri-vidya-lakshmi-karyakram-towards-bright-future" target="_blank" rel="noopener noreferrer" class="scheme-link">Learn More</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Central Sector Scheme of Scholarships</h3>
+                    <p>Merit-based scholarships for students from class 12th onwards, covering tuition fees and maintenance allowance.</p>
+                    <a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Here</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>INSPIRE Scholarship</h3>
+                    <p>Scholarships for students pursuing natural and basic sciences to attract talent to science stream.</p>
+                    <a href="https://online-inspire.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Get Details</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Begum Hazrat Mahal National Scholarship</h3>
+                    <p>Scholarships for minority community girl students from class 9-12 to promote education among minorities.</p>
+                    <a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Ministry of Education - Scholarships & Loans</h3>
+                    <p>Official portal of Ministry of Education providing comprehensive information on all education schemes and loan programs.</p>
+                    <a href="https://www.education.gov.in/en/scholarships-education-loan-0" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Portal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Andhra Pradesh State Government Section -->
+        <div class="section">
+            <div class="state-header">
+                <h2>🏛 Andhra Pradesh State Government Schemes</h2>
+            </div>
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <h3>Jagananna Vidya Deevena</h3>
+                    <p>Fee reimbursement scheme for SC, ST, BC, and minority students pursuing professional courses in AP.</p>
+                    <a href="https://www.apsche.ap.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Online</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Jagananna Vasathi Deevena</h3>
+                    <p>Hostel fee reimbursement and maintenance charges for SC, ST, BC, and minority students.</p>
+                    <a href="https://www.apsche.ap.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Get Details</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>AP Post Matric Scholarships</h3>
+                    <p>Financial assistance for students belonging to SC, ST, BC, and minority communities for higher education.</p>
+                    <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Here</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Chandranna Bima Scheme</h3>
+                    <p>Life insurance coverage for students pursuing higher education with accident and disability benefits.</p>
+                    <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Learn More</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>AP Overseas Education Loan</h3>
+                    <p>Interest-free education loans for meritorious students from AP to pursue higher education abroad.</p>
+                    <a href="https://www.apsche.ap.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply Now</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Jagananna Ammavodi</h3>
+                    <p>Financial assistance to mothers for sending their children to school, promoting education and reducing dropouts.</p>
+                    <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link">Get Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bank Education Loans Section -->
+        <div class="section bank-section">
+            <h2>🏦 Bank Education Loan Eligibility Criteria</h2>
+            
+            <div class="eligibility-list">
+                <h4>General Eligibility Requirements:</h4>
+                <ul>
+                    <li>Indian citizen with valid identity proof</li>
+                    <li>Admission confirmed in recognized institution</li>
+                    <li>Good academic record (minimum 50-60% in qualifying exam)</li>
+                    <li>Age limit: Generally 16-35 years</li>
+                    <li>Co-applicant required (parent/guardian/spouse)</li>
+                </ul>
+            </div>
+            
+            <div class="eligibility-list">
+                <h4>Loan Amount Categories:</h4>
+                <ul>
+                    <li>Up to ₹4 lakhs: No collateral required</li>
+                    <li>₹4-7.5 lakhs: Third-party guarantee required</li>
+                    <li>Above ₹7.5 lakhs: Collateral security mandatory</li>
+                    <li>Interest rates: 8.5% - 15% per annum</li>
+                    <li>Repayment period: 5-15 years after course completion</li>
+                </ul>
+            </div>
+            
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <h3>State Bank of India (SBI)</h3>
+                    <p>SBI Student Loan Scheme with competitive interest rates and flexible repayment options.</p>
+                    <a href="https://www.sbiashascholarship.co.in/" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit SBI</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>HDFC Bank Education Loan</h3>
+                    <p>Comprehensive education loan covering tuition fees, living expenses, and other educational costs.</p>
+                    <a href="https://www.hdfcbank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Apply HDFC</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>ICICI Bank Education Loan</h3>
+                    <p>Quick processing education loans with minimal documentation and attractive interest rates.</p>
+                    <a href="https://www.icicibank.com" target="_blank" rel="noopener noreferrer" class="scheme-link">Check ICICI</a>
+                </div>
+                
+                <div class="scheme-card">
+                    <h3>Canara Bank Vidya Loan</h3>
+                    <p>Specialized education loan scheme covering domestic and international education expenses.</p>
+                    <a href="https://scholarship.canarabank.in/scholar/login.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link">Visit Canara</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 <strong>Important:</strong> Always verify the latest information and eligibility criteria from official government websites before applying.</p>
+            <p>For comprehensive information, visit <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">MyScheme.gov.in</a></p>
+        </div>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ed10cd711bb550',t:'MTc2MDUwNzcwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
